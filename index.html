@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', 'sans-serif';
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+            background-color: rgb(0, 0, 0);
+            background-image: url("bc.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 48
+        }
+
+        .material-symbols-outlined.inc {
+            font-size: 20vw;
+            color: rgb(200, 200, 200);
+            cursor: pointer;
+        }
+
+        .container {
+            display: grid;
+            height: 100vh;
+            width: 100vw;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: minmax(20px, 7vh) repeat(4, 1fr);
+            overflow: hidden;
+        }
+
+        .top {
+            grid-row: 1/1;
+            grid-column: 1/-1;
+            background-color: rgb(0, 0, 0);
+            /* border: solid white 2px; */
+            position: sticky;
+            top: 0px;
+            height: fit-content;
+            z-index: 999;
+        }
+
+        .navigation {
+            grid-row: 2/-1;
+            grid-column: 1/3;
+            background-color: black;
+            font-size: 2rem;
+            padding-left: 2vw;
+            padding-top: 1vh;
+
+            color: white;
+            opacity: 0.9;
+            z-index: 10;
+
+
+        }
+
+        .search {
+            width: 40vw;
+            min-height: 5vh;
+            display: inline-block;
+            border-radius: 5px;
+            margin-left: 30vw;
+        }
+
+        .search input {
+            /* display: inline-block; */
+            width: 80%;
+            background-color: antiquewhite;
+            text-align: center;
+            padding: 5px;
+            color: black;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            margin: 0.5rem;
+
+
+        }
+
+
+        .main {
+            grid-column: 1/-1;
+            grid-row: 2/-1;
+            /* background-color: black; */
+            display: flex;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding-bottom: 50px;
+            z-index: 9;
+
+        }
+
+
+
+        img {
+            border-radius: 5px;
+        }
+
+
+
+        .ac {
+            /* display: inline-block; */
+            float: right;
+            width: 5vh;
+            height: 5vh;
+            background-color: hsl(0, 0%, 84%);
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .ac:hover {
+            background-color: gray;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 80%;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        li {
+            color: rgb(200, 200, 200);
+            font-weight: 200;
+        }
+
+        .log-in {
+            background-image: linear-gradient(to right, rgb(41, 161, 41) 0%, rgb(41, 161, 41) 30%, rgb(5,5,5) 30%, rgb(5,5,5) 100%);
+        }
+        .sign-up {
+            background-image: linear-gradient(to right, rgb(0,187,255) 0%, rgb(0,187,255) 40%, rgb(5,5,5) 40%, rgb(5,5,5) 100%);
+        }
+        li:hover {
+            background-color: rgb(20, 20, 20);
+            color: white;
+            cursor: pointer;
+            border-radius: 2%;
+
+        }
+
+        li:active {
+            background-color: #50717b;
+        }
+
+        .fmenu {
+            height: 100%;
+            width: 7vh;
+            background-color: rgb(3, 3, 3);
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: black;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+
+
+        .logo {
+            background-color: rgba(245, 245, 245, 0);
+            width: 25vw;
+            margin-left: 8vw;
+            margin-top: 15vh;
+            border-radius: 40% 40% 40% 40%/60% 60% 60% 60%;
+            padding: 10px;
+            border: 5px solid white;
+            transition: 1s;
+        }
+
+        .quote {
+            background-color: rgba(10, 10, 10, 0.9);
+            margin-left: 15vw;
+            height: fit-content;
+            width: 40vw;
+            margin-top: 15vh;
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow: 3px 3px 20px rgb(123, 122, 122);
+            font-size: 30px;
+            font-weight: 1000;
+            text-shadow: 2px 2px 4px rgb(0, 8, 255);
+            color: white;
+            transition: 1s;
+        }
+
+        .heading {
+            /* background-color: black; */
+            /* color: white; */
+            font-size: 100px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgb(209, 211, 255);
+            color: rgb(0, 8, 255);
+            font-family: 'Algerian', sans-serif;
+            /* background-image: url("bc.jpg"); */
+            background-size: contain;
+            background-repeat: repeat-x;
+            box-shadow: 2px 2px 50px rgb(255, 255, 255);
+        }
+
+
+        .quote:hover {
+            transform: scale(1.2);
+            box-shadow: 3px 3px 20px rgb(0, 8, 255);
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+            box-shadow: 3px 3px 20px rgb(0, 8, 255);
+        }
+
+        .footer {
+            height: 10vh;
+            background-color: rgba(100, 95, 95, 0.292);
+
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-family: 'Cookie', sans-serif;
+            font-size: 30px;
+            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.692);
+            width: 100%;
+        }
+
+        /* #img2 {
+            float: right;
+            margin-right: 1vw;
+            height: 5vh;
+            width: 2.5vw;
+        } */
+        @media (max-width: 1200px) {
+
+            .material-symbols-outlined.inc {
+                font-size: 200px;
+                color: rgb(200, 200, 200);
+                cursor: pointer;
+            }
+
+            .search button {
+                width: 20px;
+            }
+
+            .main {
+                grid-column: 1/-1;
+                padding: 20px;
+                overflow: scroll;
+            }
+
+            .navigation {
+                grid-column: 1/8;
+            }
+
+            .logo {
+                display: block;
+                width: 50vw;
+                margin-top: 5vh;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: rgba(245, 245, 245, 0);
+                margin-top: 15px;
+                border-radius: 40% 40% 40% 40%/60% 60% 60% 60%;
+                padding: 10px;
+                border: 5px solid white;
+                transition: 1s;
+            }
+
+            .quote {
+                background-color: rgba(10, 10, 10, 0.9);
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 75vw;
+                margin-top: 15px;
+                border-radius: 20px;
+                padding: 10px;
+                box-shadow: 3px 3px 20px rgb(123, 122, 122);
+                font-weight: 1000;
+                text-shadow: 2px 2px 4px rgb(0, 8, 255);
+                color: white;
+                transition: 1s;
+            }
+
+            .footer {
+                height: 10vh;
+                background-color: rgba(100, 95, 95, 0.292);
+
+                color: rgb(255, 255, 255);
+                text-align: center;
+                font-family: 'Cookie', sans-serif;
+                text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.692);
+                width: 100vw;
+            }
+        }
+
+        @media (max-width:650px) {
+
+            .quote,
+            .footer {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="heading">
+        HOME
+    </div>
+
+    <div class="container">
+
+        <div class="top">
+            <button class="fmenu" onclick="fold()"><span class="material-symbols-outlined">menu</span></button>
+            <div class="search">
+                <input type="search" placeholder="Search" id="search" oninput="search()">
+                <!-- <button type="submit" onclick="search()">🔎</button> -->
+            </div>
+            <button class="ac"></button>
+            <!-- <a href="cart.html"><img src="cart.png"  alt="cart" id="img2"></a> -->
+
+        </div>
+
+        <div class="navigation">
+            <ul>
+                <a href="index.html">
+                    <li>Home</li>
+                </a>
+                <a href="products.html">
+                    <li>Products</li>
+                </a>
+                <a href="gallery.html">
+                    <li>Gallery</li>
+                </a>
+                <a href="contactus.html">
+                    <li>Contact</li>
+                </a>
+                <a href="about.html">
+                    <li>About</li>
+                </a>
+                <a href="login.html">
+                    <li class="log-in">Log In</li>
+                </a>
+                <a href="signup.html">
+                    <li class="sign-up">Sign Up</li>
+                </a>
+            </ul>
+        </div>
+
+
+        <div class="main">
+            <img src="logo.png" alt="logo" class="logo">
+            <div class="quote">
+                Welcome to The Quad Market. Here you can buy and sell to your college friends
+            </div>
+            <div class="footer">
+                <p class="flex-all-center">Copyright (All rights reserved) &copy; TheQuadMarket.com</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const navi = document.querySelector('.navigation');
+        navi.style.display = "none";
+        function fold() {
+            const sym = document.querySelector('.material-symbols-outlined');
+            const nav = document.querySelector('.navigation');
+            const main = document.querySelector('.main');
+            if (sym.textContent == 'menu') {
+                sym.textContent = 'close';
+                // nav.style.gridColumn=0/1;
+                main.style.filter = 'blur(5px)';
+                // nav.style.zIndex = '10';
+                nav.style.display = "";
+                // main.style.gridColumn='1/-1';
+            }
+            else {
+                sym.textContent = 'menu';
+                main.style.filter = 'blur(0px)'
+                // nav.style.zIndex = 8;
+                nav.style.display = "none";
+                // main.style.gridColumn='1/-1';
+            }
+        }
+    </script>
+</body>
+
+</html>
